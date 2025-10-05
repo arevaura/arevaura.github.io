@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Foldit:wght@100..900&family=Rowdies:wght@300;400;700&display=swap');
+/* choose different text for regular text later!!! */
+
+:root {
+    --primary: #2b1055;
+    --secondary: #7597de;
+    --main: #1c0522;
+    --shadow: #878585;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reset default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set up basic styles */
+body {
+    font-family: "Rowdies", sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    background: linear-gradient(180deg, var(--primary), var(--secondary));
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    padding: 30px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000; /* Make sure header is on top of everything */
+}
+header .logo {
+    font-family: "Rowdies", sans-serif;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+header nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header nav ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+header nav ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 100px;
+}
+header nav ul li a:hover, 
+header nav ul li a.active {
+    background: #fff;
+    color: #333;
+}
+
+section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide overflow from background images + the explore button */
+}
+section::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px; /* Height of fade between background colours */
+    background: linear-gradient(to top, var(--main), transparent);
+    z-index: 1000;
+}
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+section img#moon {
+    mix-blend-mode: screen; /* Blend black ring around moon into screen */
+}
+section img#mountains_front {
+    z-index: 10;
+}
+#sliding-text {
+    position: absolute;
+    right: -350px;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 7.5vw;
+    z-index: 9;
+    transform: translateY(100px);
+}
+#btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 40px;
+    background: #fff;
+    color: var(--primary);
+    font-size: 1.5em;
+    z-index: 9;
+    transform: translateY(100px);
+}
+.sec {
+    position: relative;
+    padding: 100px;
+    background: var(--main);
+}
+.sec h2 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    color: #fff;
+}
+.sec p {
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgb(84, 61, 90);
+    border-radius: 10px;
+}
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    width: 23%;
+    margin: 5px;
+    justify-items: center;
+    align-items: center;
+}
+.gallery-item img {
+    transition: box-shadow 0.5s ease;
+    border-radius: 10px;
+    border: 10px solid #d0d0d0;
+    max-width: 93%;
+    max-height: 70%;
+}
+.gallery-item:hover img { /* keep frame constant but image shrinks!!! */
+    /* box-shadow: 0px 0px 20px rgba(175, 175, 175, 0.5); */
+    border: 10px solid #f8f8f8;
+    transform: scale(0.905);
+}
+
+
+h1 {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 26px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: var(--main);
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Custom styles below */
+.title {
+    text-align: center;
+    text-shadow: 3px 3px 3px var(--shadow);
+}

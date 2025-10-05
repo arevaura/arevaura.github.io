@@ -1,12 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" /> 
+    <link rel="icon" type="image/png" href="eva toon.png" />
+    <title>evaura ✨| Portfolio Site</title>
 </head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>    
+    <!-- Header -->
+    <header>
+        <!-- Logo -->
+        <!-- create logo!!! -->
+        <!-- <div><img src="logo.png" alt="logo" style="width: 80px;height:80px;"/></div> -->
+        <a href="#" class="logo">evaura</a>
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li> <!-- activates button for current page -->
+                <li><a href="#">Mission</a></li>
+                <li><a href="#sec">Creations</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Parallax Effect Elements -->
+    <section>
+        <img src="graphics/background/stars.png" alt="stars" id="stars">
+        <img src="graphics/background/moon.png" alt="moon" id="moon">
+        <img src="graphics/background/mountains_behind.png" alt="mountains_behind" id="mountains_behind">
+        <h2 id="sliding-text">- Eva Jiang -</h2> <!-- lessen sliding effect!!! -->
+        <a href="#sec" id="btn">Explore</a>
+        <img src="graphics/background/mountains_front.png" alt="mountains_front" id="mountains_front">
+    </section>
+    
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('sliding-text');
+        let btn = document.querySelector('.btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function () {
+            let value = window.scrollY; // var for scroll coordinate
+            stars.style.left = value * 0.25 + 'px'; // reset location dependent on current scroll coordinate
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.0 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px'; // keeps header visible even when scrolling
+        })
+    </script>
+
+    <div class="sec" id="sec">
+        <!-- Replace with original art later!!! -->
+        <p>Vectors Designed by Freepik</p>
+        <p>Parallax Scrolling Effect from <a href="https://www.youtube.com/watch?v=1wfeqDyMUx4">this tutorial</a>.</p>
+        
+        <!-- Title -->
+        <div class="title">
+            <h1>Eva Jiang</h1>
+            <!-- repopulate filler text!!! -->
+            <h2>@arevaura</h2>
+            <p>- The University of British Columbia -</p>
+        </div>
+
+        <!-- Projects -->
+        <h3>Projects</h3>
+        <div class="gallery">
+            <!-- consider expanding image gallery (https://www.youtube.com/watch?app=desktop&v=ly4Dqz2Mz8s)!!! -->
+            <div class="gallery-item">
+                <a href="https://devpost.com/software/coloright" target="_blank">
+                    <img src="graphics/gallery/project_1.png" alt="project_1" />
+                </a>
+                <h4>ColoRight</h4>
+                <p>@cmd-f 2024</p>
+            </div>
+            <div class="gallery-item">
+                <a href="https://devpost.com/software/trek-teryx" target="_blank">
+                    <img src="graphics/gallery/project_2.png" alt="project_2" />
+                </a>
+                <h4>Treck'teryx</h4>
+                <p>@youCode 2024</p>
+            </div>
+            <div class="gallery-item">
+                <a href="https://devpost.com/software/hearttalk" target="_blank">
+                    <img src="graphics/gallery/project_3.png" alt="project_3" />
+                </a>
+                <h4>HeartTalk</h4>
+                <p>@nwHacks 2025</p>
+            </div>
+            <div class="gallery-item">
+                <a href="https://devpost.com/software/mapme-jnvg53" target="_blank">
+                    <img src="graphics/gallery/project_4.png" alt="project_4" />
+                </a>
+                <h4>MapMe</h4>
+                <p>@cmd-f 2025</p>
+            </div>
+        </div>
+    </div>
+    
 </body>
+
 </html>
