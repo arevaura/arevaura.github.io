@@ -5,6 +5,7 @@ import {
   Outlet,
   useNavigation,
 } from "react-router";
+import { useEffect } from "react";
 import { getContacts } from "../data";
 import type { Route } from "./+types/sidebar";
 
@@ -22,6 +23,13 @@ export default function SidebarLayout({
 }: Route.ComponentProps) {
   const { contacts, q } = loaderData;
   const navigation = useNavigation();
+
+  useEffect(() => {
+    const searchField = document.getElementById("q");
+    if (searchField instanceof HTMLInputElement) {
+      searchField.value = q || "";
+    }
+  }, [q]);
 
   return (
     <>
