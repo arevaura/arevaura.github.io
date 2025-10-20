@@ -46,10 +46,13 @@ export default function SidebarLayout({
         </h1>
         <div>
           <Form 
-            onChange={(event) =>
-              submit(event.currentTarget)
-            }
-            id="search-form" 
+            id="search-form"
+            onChange={(event) => {
+              const isFirstSearch = q === null;
+              submit(event.currentTarget, {
+                replace: !isFirstSearch,
+              });
+            }} 
             role="search"
           >
             <input
