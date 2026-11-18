@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
   title: "Eva Jiang | Software Engineer & UX Developer",
@@ -53,7 +55,11 @@ export default function RootLayout({
           Skip to main content
         </a>
         <div className="relative min-h-screen flex flex-col">
-          {children}
+          <Navbar />
+          <div className="flex-1 flex flex-col">
+            {children}
+          </div>
+          <Footer />
         </div>
       </body>
     </html>
