@@ -36,6 +36,10 @@ export const metadata: Metadata = {
     title: "Eva Jiang | Software Engineer & UX Developer",
     description: "Software Engineer & UX-oriented developer based at UBC.",
   },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
 };
 
 export const viewport: Viewport = {

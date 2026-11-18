@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Code2, Compass, Layers, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -105,10 +105,10 @@ export default function Home() {
                   </div>
                   <div className="space-y-1">
                     <div className="text-sm font-semibold text-foreground">
-                      4 Hackathon Builds
+                      8 Hackathon Builds
                     </div>
                     <div className="text-xs text-muted">
-                      ColoRight, Treck&apos;teryx, HeartTalk, MapMe
+                      ColoRight, Treck&apos;teryx, HeartTalk, MapMe, and more!
                     </div>
                   </div>
                   <div className="pt-2 border-t border-surface-border flex items-center justify-between text-xs font-mono text-muted">

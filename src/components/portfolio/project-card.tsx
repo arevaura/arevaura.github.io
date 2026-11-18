@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArrowUpRight, CheckCircle2, Eye } from "lucide-react";
 import { Project } from "@/types/portfolio";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 
 interface ProjectCardProps {

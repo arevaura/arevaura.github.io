@@ -27,7 +27,7 @@ export function SectionHeader({
     >
       {tag && (
         <span className="inline-block text-xs font-mono uppercase tracking-widest text-primary font-semibold">
-          // {tag}
+          {"//"} {tag}
         </span>
       )}
       <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">

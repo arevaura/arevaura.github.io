@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="#090a0f" />
+  <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" fill="none" stroke="#232734" />
+  <!-- Stylized monogram E with modern code aesthetic -->
+  <path d="M10 9 H22 C22 9 22 12 19 12 H14 V14 H20 C20 14 20 17 18 17 H14 V19 H22 C22 19 22 22 19 22 H10 Z" fill="url(#gradient)" />
+</svg>

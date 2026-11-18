@@ -16,17 +16,17 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     name: "Devpost",
-    href: "https://devpost.com/software/coloright",
+    href: "https://devpost.com/arevaura",
     iconName: "devpost",
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/arevaura",
+    href: "https://linkedin.com/in/evajiangvc",
     iconName: "linkedin",
   },
   {
     name: "Email",
-    href: "mailto:eva@example.com",
+    href: "mailto:evajiangvc+contact@gmail.com",
     iconName: "mail",
   },
 ];

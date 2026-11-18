@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Github, Linkedin, Mail, Trophy } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SOCIAL_LINKS } from "@/data/navigation";
 
@@ -16,7 +16,7 @@ export function Footer() {
               href="/"
               className="text-lg font-bold font-mono tracking-tight text-foreground"
             >
-              evaura<span className="text-primary font-normal">.dev</span>
+              evaura
             </Link>
             <p className="text-sm text-muted max-w-sm leading-relaxed">
               Software Engineer & UX developer focused on interactive, accessible, and high-performance digital systems.
@@ -81,7 +81,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-surface-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
           <div>
-            © {currentYear} Eva Jiang (@arevaura). All rights reserved.
+            © {currentYear} Eva Jiang. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5">

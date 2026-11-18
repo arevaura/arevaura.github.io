@@ -36,7 +36,7 @@ export function Navbar() {
               <Terminal className="h-4 w-4 text-primary" />
             </div>
             <span className="text-base font-bold">
-              evaura<span className="text-primary font-normal">.dev</span>
+              evaura
             </span>
           </Link>
 

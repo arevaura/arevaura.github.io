@@ -41,7 +41,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           onClick={onClose}
           className="text-lg font-bold tracking-tight text-foreground font-mono"
         >
-          evaura<span className="text-primary">.dev</span>
+          evaura
         </Link>
         <div className="flex items-center gap-2">
           <Button

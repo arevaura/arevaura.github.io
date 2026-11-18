@@ -19,7 +19,7 @@ export const DEFAULT_TRACKS: AudioTrack[] = [
     id: "lofi-focus",
     title: "Pacific Coastline (Lo-Fi)",
     artist: "Ambient Focus Studio",
-    src: "/assets/audio/ambient-loop.wav", // Fallback to local loop
+    src: "/assets/audio/ambient-loop.wav",
   },
 ];
 
@@ -66,16 +66,14 @@ export const useAudioStore = create<AudioStoreState>((set, get) => ({
       onplay: () => set({ isPlaying: true }),
       onpause: () => set({ isPlaying: false }),
       onstop: () => set({ isPlaying: false }),
-      onend: () => {
-        // When loop is true, onend triggers before repeating
-      },
     });
 
     set({ howl: sound });
   },
 
   play: () => {
-    let { howl, initHowl } = get();
+    const { initHowl } = get();
+    let { howl } = get();
     if (!howl) {
       initHowl();
       howl = get().howl;
@@ -104,7 +102,7 @@ export const useAudioStore = create<AudioStoreState>((set, get) => ({
   },
 
   toggleMute: () => {
-    const { isMuted, howl, volume } = get();
+    const { isMuted, howl } = get();
     const nextMuted = !isMuted;
     if (howl) {
       howl.mute(nextMuted);

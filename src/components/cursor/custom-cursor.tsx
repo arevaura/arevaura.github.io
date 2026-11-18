@@ -69,6 +69,7 @@ export function CustomCursor() {
     <>
       {/* Crisp Center Dot */}
       <motion.div
+        aria-hidden="true"
         style={{
           x: mouseX,
           y: mouseY,
@@ -80,6 +81,7 @@ export function CustomCursor() {
 
       {/* Trailing Fluid Ambient Ring */}
       <motion.div
+        aria-hidden="true"
         style={{
           x: springX,
           y: springY,

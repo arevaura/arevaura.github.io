@@ -4,7 +4,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
   {
     id: "hackathons",
     role: "Full-Stack & UX Developer (Hackathons)",
-    organization: "UBC & Pacific Northwest Hackathons",
+    organization: "UBC Hackathons",
     location: "Vancouver, BC",
     period: "2024 – Present",
     description: [
@@ -16,16 +16,16 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     isCurrent: true,
   },
   {
-    id: "open-source",
-    role: "Software Developer & Open Source Contributor",
-    organization: "Independent & Community Projects",
+    id: "independent-projects",
+    role: "Software Developer (Independent Projects)",
+    organization: "Independent Development",
     location: "Vancouver, BC",
-    period: "2023 – Present",
+    period: "2026 – Present",
     description: [
-      "Building and maintaining modern web applications, interactive experiments, and open-source personal software architectures.",
-      "Iterating on UX ergonomics, accessibility compliance, and performance profiling across modern JavaScript/TypeScript runtimes.",
+      "Architecting and developing full-stack web applications and interactive software, including smart home automation dashboards and animal shelter management systems.",
+      "Designing responsive, human-centered user interfaces focused on clear data workflows, component ergonomics, and accessible web standards.",
     ],
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "GSAP", "GitHub Actions"],
+    technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS", "REST APIs", "GitHub Actions"],
     isCurrent: true,
   },
 ];

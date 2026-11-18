@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, CheckCircle2, Code, Compass, Layers, X } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Compass, Layers, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Project } from "@/types/portfolio";
 import { Badge } from "@/components/ui/badge";
