@@ -4,6 +4,8 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { SmoothScrollProvider } from "@/components/animation/smooth-scroll-provider";
 import { ScrollProgress } from "@/components/animation/scroll-progress";
+import { CustomCursor } from "@/components/cursor/custom-cursor";
+import { DraggablePlayer } from "@/components/audio/draggable-player";
 
 export const metadata: Metadata = {
   title: "Eva Jiang | Software Engineer & UX Developer",
@@ -56,6 +58,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+        <CustomCursor />
         <SmoothScrollProvider>
           <div className="relative min-h-screen flex flex-col">
             <ScrollProgress />
@@ -64,6 +67,7 @@ export default function RootLayout({
               {children}
             </div>
             <Footer />
+            <DraggablePlayer />
           </div>
         </SmoothScrollProvider>
       </body>
