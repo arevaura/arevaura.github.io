@@ -49,6 +49,30 @@ const config: Config = {
       boxShadow: {
         glow: "0 0 40px -10px var(--primary)",
       },
+      keyframes: {
+        "marquee-left": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+        "marquee-right": {
+          from: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(0)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-12px)" },
+        },
+        pulseGlow: {
+          "0%, 100%": { opacity: "0.35", transform: "scale(1)" },
+          "50%": { opacity: "0.65", transform: "scale(1.08)" },
+        },
+      },
+      animation: {
+        "marquee-left": "marquee-left linear infinite",
+        "marquee-right": "marquee-right linear infinite",
+        float: "float 6s ease-in-out infinite",
+        "pulse-glow": "pulseGlow 8s ease-in-out infinite",
+      },
     },
   },
   plugins: [],

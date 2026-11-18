@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { SmoothScrollProvider } from "@/components/animation/smooth-scroll-provider";
+import { ScrollProgress } from "@/components/animation/scroll-progress";
 
 export const metadata: Metadata = {
   title: "Eva Jiang | Software Engineer & UX Developer",
@@ -54,13 +56,16 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <div className="relative min-h-screen flex flex-col">
-          <Navbar />
-          <div className="flex-1 flex flex-col">
-            {children}
+        <SmoothScrollProvider>
+          <div className="relative min-h-screen flex flex-col">
+            <ScrollProgress />
+            <Navbar />
+            <div className="flex-1 flex flex-col">
+              {children}
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
+        </SmoothScrollProvider>
       </body>
     </html>
   );
