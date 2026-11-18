@@ -8,10 +8,13 @@ import { CustomCursor } from "@/components/cursor/custom-cursor";
 import { DraggablePlayer } from "@/components/audio/draggable-player";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://arevaura.github.io"),
+  
   title: "Eva Jiang | Software Engineer & UX Developer",
   description:
     "Personal portfolio of Eva Jiang (@arevaura) — Software Engineer & UX-oriented developer based at The University of British Columbia.",
-  keywords: [
+  
+    keywords: [
     "Eva Jiang",
     "arevaura",
     "Software Engineer",
@@ -20,8 +23,10 @@ export const metadata: Metadata = {
     "UBC",
     "Portfolio",
   ],
+
   authors: [{ name: "Eva Jiang", url: "https://github.com/arevaura" }],
   creator: "Eva Jiang",
+
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -30,12 +35,23 @@ export const metadata: Metadata = {
     description:
       "Personal portfolio of Eva Jiang (@arevaura) — Software Engineer & UX-oriented developer.",
     siteName: "Eva Jiang Portfolio",
+    images: [
+      {
+        url: "/assets/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Eva Jiang | Software Engineer & UX Developer",
+      },
+    ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Eva Jiang | Software Engineer & UX Developer",
     description: "Software Engineer & UX-oriented developer based at UBC.",
+    images: ["/asssets/og-image.png"],
   },
+
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
