@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowUpRight, Github, Linkedin, Mail, Trophy } from "lucide-react";
 import { Container } from "@/components/ui/container";
