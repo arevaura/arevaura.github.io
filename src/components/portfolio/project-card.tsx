@@ -4,6 +4,7 @@ import { ArrowUpRight, CheckCircle2, Eye } from "lucide-react";
 import { Project } from "@/types/portfolio";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
+import { trackProjectView } from "@/lib/analytics";
 
 interface ProjectCardProps {
   project: Project;
@@ -13,7 +14,10 @@ interface ProjectCardProps {
 export function ProjectCard({ project, onSelect }: ProjectCardProps) {
   return (
     <Card
-      onClick={() => onSelect?.(project)}
+      onClick={() => {
+        trackProjectView(project.title, project.category);
+        onSelect?.(project);
+      }}
       className="flex flex-col h-full overflow-hidden border-surface-border bg-surface hover:border-primary/50 transition-all duration-300 group cursor-pointer"
     >
       {/* Visual Header / Image Preview */}

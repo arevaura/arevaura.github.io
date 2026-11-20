@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Suspense } from "react";
 import "@/styles/globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -6,6 +7,7 @@ import { SmoothScrollProvider } from "@/components/animation/smooth-scroll-provi
 import { ScrollProgress } from "@/components/animation/scroll-progress";
 import { CustomCursor } from "@/components/cursor/custom-cursor";
 import { DraggablePlayer } from "@/components/audio/draggable-player";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://arevaura.github.io"),
@@ -72,6 +74,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased selection:bg-primary selection:text-primary-foreground">
+        {/* Google Analytics 4 — private, server-side data only */}
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+        </Suspense>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"

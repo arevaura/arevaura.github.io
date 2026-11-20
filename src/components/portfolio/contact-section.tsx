@@ -5,6 +5,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { FadeIn } from "@/components/animation/fade-in";
+import { trackContactClick } from "@/lib/analytics";
 
 export function ContactSection() {
   return (
@@ -37,6 +38,7 @@ export function ContactSection() {
                   href="https://github.com/arevaura"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackContactClick("github", "https://github.com/arevaura")}
                 >
                   <Button variant="outline" size="sm" className="w-full">
                     <span>Visit GitHub</span>
@@ -65,6 +67,7 @@ export function ContactSection() {
                   href="https://devpost.com/arevaura"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackContactClick("devpost", "https://devpost.com/arevaura")}
                 >
                   <Button variant="outline" size="sm" className="w-full">
                     <span>View Devpost</span>
@@ -93,6 +96,7 @@ export function ContactSection() {
                   href="https://linkedin.com/in/evajiangvc"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackContactClick("linkedin", "https://linkedin.com/in/evajiangvc")}
                 >
                   <Button variant="outline" size="sm" className="w-full">
                     <span>Connect on LinkedIn</span>
@@ -117,7 +121,10 @@ export function ContactSection() {
                 <p className="text-xs text-muted mb-4 leading-relaxed">
                   Have a question or role? Feel free to send a message anytime.
                 </p>
-                <Link href="mailto:evajiangvc+contact@gmail.com">
+                <Link
+                  href="mailto:evajiangvc+contact@gmail.com"
+                  onClick={() => trackContactClick("email", "mailto:evajiangvc+contact@gmail.com")}
+                >
                   <Button variant="primary" size="sm" className="w-full">
                     <span>Send Email</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />

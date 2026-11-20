@@ -16,6 +16,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { useAudioStore } from "@/stores/useAudioStore";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { trackMusicPlayerInteraction } from "@/lib/analytics";
 
 export function DraggablePlayer() {
   const {
@@ -56,7 +57,10 @@ export function DraggablePlayer() {
           <Button
             variant="ghost"
             size="icon"
-            onClick={togglePlay}
+            onClick={() => {
+              trackMusicPlayerInteraction(isPlaying ? "pause" : "play", currentTrack?.title);
+              togglePlay();
+            }}
             aria-label={isPlaying ? "Pause ambient audio" : "Play ambient audio"}
             className="rounded-full w-9 h-9 p-0 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground"
           >
@@ -102,7 +106,10 @@ export function DraggablePlayer() {
           <Button
             variant="ghost"
             size="icon"
-            onClick={toggleMinimize}
+            onClick={() => {
+              trackMusicPlayerInteraction("expand");
+              toggleMinimize();
+            }}
             aria-label="Expand audio player"
             className="w-7 h-7 rounded-full p-0 text-muted hover:text-foreground"
           >
@@ -127,7 +134,10 @@ export function DraggablePlayer() {
             <Button
               variant="ghost"
               size="icon"
-              onClick={toggleMinimize}
+              onClick={() => {
+                trackMusicPlayerInteraction("minimize");
+                toggleMinimize();
+              }}
               aria-label="Minimize audio player"
               className="w-6 h-6 p-0 text-muted hover:text-foreground"
             >
@@ -166,7 +176,10 @@ export function DraggablePlayer() {
             <Button
               variant="primary"
               size="icon"
-              onClick={togglePlay}
+              onClick={() => {
+                trackMusicPlayerInteraction(isPlaying ? "pause" : "play", currentTrack?.title);
+                togglePlay();
+              }}
               aria-label={isPlaying ? "Pause track" : "Play track"}
               className="w-11 h-11 rounded-full shadow-glow"
             >
@@ -180,7 +193,10 @@ export function DraggablePlayer() {
             <Button
               variant="secondary"
               size="icon"
-              onClick={nextTrack}
+              onClick={() => {
+                trackMusicPlayerInteraction("next_track", currentTrack?.title);
+                nextTrack();
+              }}
               aria-label="Next track"
               className="w-9 h-9 rounded-full"
             >
@@ -190,7 +206,10 @@ export function DraggablePlayer() {
             <Button
               variant="ghost"
               size="icon"
-              onClick={toggleMute}
+              onClick={() => {
+                trackMusicPlayerInteraction(isMuted ? "unmute" : "mute");
+                toggleMute();
+              }}
               aria-label={isMuted ? "Unmute audio" : "Mute audio"}
               className="w-9 h-9 rounded-full text-muted hover:text-foreground"
             >
@@ -211,7 +230,10 @@ export function DraggablePlayer() {
               max="1"
               step="0.05"
               value={isMuted ? 0 : volume}
-              onChange={(e) => setVolume(parseFloat(e.target.value))}
+              onChange={(e) => {
+                setVolume(parseFloat(e.target.value));
+                trackMusicPlayerInteraction("volume_change");
+              }}
               aria-label="Volume slider"
               className="w-full h-1 bg-surface-muted rounded-lg appearance-none cursor-pointer accent-primary"
             />
